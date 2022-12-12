@@ -2,21 +2,7 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <!-- bootstrap.min css -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <!-- Animate css -->
-    <link rel="stylesheet" href="css/animate.css"> 
-    <!-- icons -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
-
-
-    <!-- Main Stylesheet -->
-     <link rel="stylesheet" href="css/estilos.css">
-    <title>Sobre nosotros</title>
+   {{> head}}
 </head>
 
 <body>
@@ -24,20 +10,7 @@
 
 
     <!-- Start Top Header Bar -->
-    <header class="top-header">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-4 col-xs-12 col-sm-4">
-                </div>
-                <div class="my-3 col-md-4 col-xs-12 col-sm-4 text-center">
-                    <span class="fs-2">LOGO</span>
-                </div>
-                <div class="col-md-4 col-xs-12 col-sm-4 d-flex justify-content-end align-items-center">
-                    <a href="../back/login.html">LOGIN </a>
-                </div>
-            </div>
-        </div>
-    </header><!-- End Top Header Bar -->
+   {{> header}}<!-- End Top Header Bar -->
 
 
     <!-- Main Menu Section -->
@@ -101,34 +74,7 @@
     </section>
 
 
-    <footer class="footer section text-center mt-5">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <ul class="social-media">
-                        <li>
-                            <a href="https://www.facebook.com/">
-                                <i class="bi bi-facebook"></i>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="https://www.instagram.com/">
-                                <i class="bi bi-instagram"></i>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="https://www.twitter.com/">
-                                <i class="bi bi-twitter"></i>
-                            </a>
-                        </li>
-                    </ul>
-                    <p class="copyright-text">Copyright &copy;2022. Contacto <a
-                            href="mailto:">santiago.acosta@bue.edu.ar</a></p>
-                </div>
-            </div>
-        </div>
-    </footer>
-
+{{> footer}}
     <!-- 
     Essential Scripts
     =====================================-->
