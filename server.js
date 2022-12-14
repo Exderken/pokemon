@@ -6,6 +6,7 @@ const path = require("path");
 const rutasFront= require("./routes/front")
 const rutasBack= require("./routes/back")
 const port = 3000;
+require("./views/helpers/helpers.js")
 // const pokemon = require("./data/pokedex.json")
 
 
@@ -20,8 +21,8 @@ hbs.registerPartials(__dirname + "/views/partials"); // indicamos el directorio 
 
 app.use(express.static("public"));
 
-app.use("/front/",rutasFront)
-app.use("/back/",rutasBack)
+app.use("/",rutasFront)
+app.use("/",rutasBack)
 
 app.use((req,res,next)=>{
   res.status(404).render("404",{
