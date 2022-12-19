@@ -1,9 +1,17 @@
-const productos = require("../data/productos.json");
+// const productos = require("../data/productos.json");
+const db = require("../models/connection.js");
 
 const adminGet = (req, res) => {
-  res.render("admin", {
-    titulo: "Panel de control",
-    producto: productos[0].data,
+  let sql = "SELECT * FROM productos";
+
+  db.query(sql, (err, data) => {
+    if (err) throw err;
+    console.log(data);
+
+    res.render("admin", {
+      titulo: "Panel de control",
+      producto: data,
+    });
   });
 };
 
@@ -19,10 +27,9 @@ const loginGet = (req, res) => {
   res.render("login", {});
 };
 
-module.exports={
-adminGet,
-loginGet,
-editarGet,
-agregarGet
-
-}
+module.exports = {
+  adminGet,
+  loginGet,
+  editarGet,
+  agregarGet,
+};

@@ -26,16 +26,21 @@
 
                 <div class="row">
                     <!-- Contact Form -->
-                    <form action="/contacto" method="post" class="row mb-3 g-3 needs-validation col-md-6 mx-auto"
+                    <form action="" method="post" class="row mb-3 g-3 needs-validation col-md-6 mx-auto"
                         id="contact-form" novalidate>
                         <div class="col-md-4">
+
                             <label for="nombre" class="form-label">Nombre</label>
-                            <input type="text" class="form-control" id="nombre" placeholder="Escribe tu nombre"
+                            <input type="text" class="form-control" id="nombre" pattern="{5-20}" title="DEBE TENER POR LO MENOS 5 CARACTERES UN MAXIMO DE 20" placeholder="Escribe tu nombre"
                                 name="nombre" required>
+                                  <div class="valid-feedback">
+                                esta bien
+                            </div>
                             <div class="invalid-feedback">
                                 Escribe correctamente tu nombre
                             </div>
                         </div>
+
                         <div class="col-md-4">
                             <label for="email" class="form-label">E-mail</label>
                             <input type="email" class="form-control" name="email" id="email"
@@ -91,7 +96,25 @@
 
     <script>
 
-        // Validación
+       // Example starter JavaScript for disabling form submissions if there are invalid fields
+(() => {
+  'use strict'
+
+  // Fetch all the forms we want to apply custom Bootstrap validation styles to
+  const forms = document.querySelectorAll('.needs-validation')
+
+  // Loop over them and prevent submission
+  Array.from(forms).forEach(form => {
+    form.addEventListener('submit', event => {
+      if (!form.checkValidity()) {
+        event.preventDefault()
+        event.stopPropagation()
+      }
+
+      form.classList.add('was-validated')
+    }, false)
+  })
+})()
 
     </script>
 

@@ -7,6 +7,7 @@ const rutasFront= require("./routes/front")
 const rutasBack= require("./routes/back")
 const port = 3000;
 require("./views/helpers/helpers.js")
+// require("dotenv").config()
 // const pokemon = require("./data/pokedex.json")
 
 
