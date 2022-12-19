@@ -6,7 +6,7 @@ const adminGet = (req, res) => {
 
   db.query(sql, (err, data) => {
     if (err) throw err;
-    console.log(data);
+    // console.log(data);
 
     res.render("admin", {
       titulo: "Panel de control",

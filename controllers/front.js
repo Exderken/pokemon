@@ -6,7 +6,7 @@ const indexGet = (req, res) => {
 
   db.query(sql, (err, data) => {
     if (err) throw err;
-    console.log(data);
+    // console.log(data);
 
     res.render("index", {
       titulo: "Mi pagina web",
