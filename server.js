@@ -11,6 +11,13 @@ require("./views/helpers/helpers.js")
 // const pokemon = require("./data/pokedex.json")
 
 
+// para formularios
+app.use(express.json())
+app.use(express.urlencoded({
+  extended:false
+}))
+
+
 app.set("view engine", "hbs"); // indica que usaremos la plantilla "handlebars"
 app.set("views",[
 path.join("./views/front"),

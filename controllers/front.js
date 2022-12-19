@@ -1,5 +1,6 @@
 // const productos = require("../data/productos.json");
 const db = require("../models/connection.js");
+const nodemailer = require("nodemailer");
 
 const indexGet = (req, res) => {
   let sql = "SELECT * FROM productos";
@@ -27,6 +28,50 @@ const contactoGet = (req, res) => {
   });
 };
 
+const contactoPost = (req, res) => {
+// tomo informacion del formulario
+let data=req.body
+console.log(data)
+
+  const transporter = nodemailer.createTransport({
+    service: "gmail",
+    auth: {
+      user: process.env.SMTP_USERNAME,
+      pass: process.env.SMTP_PASSWORD,
+    },
+  });
+
+  const mailOptions = {
+    from: data.nombre,
+    to: "cristoferstone18@gmail.com",
+    subject: `Contacto - ${data.asunto}`,
+    html: `<p>${data.mensaje}</p>`,
+  };
+
+  // envia el email
+	transporter.sendMail(mailOptions,  (error, info) => {
+    if (error) {
+        console.log(error)
+        res.status(500, error.message)
+        res.status(500).render('contacto', {
+            mensaje: `Ha ocurrido el siguiente error ${error.message}`,
+            mostrar: true,
+            clase: 'danger'
+        })
+    } else {
+        console.log('E-mail enviado')
+        res.status(200).render('contacto', {
+            mensaje: "Mail enviado correctamente",
+            mostrar: true,
+            clase: 'success'
+        })
+    }
+  });
+
+
+
+};
+
 const detalleGet = (req, res) => {
   res.render("detalle-producto", {
     titulo: "detalle-producto",
@@ -45,4 +90,5 @@ module.exports = {
   contactoGet,
   nosotrosGet,
   comoComprarGet,
+  contactoPost,
 };

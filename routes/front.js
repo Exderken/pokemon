@@ -9,6 +9,8 @@ router.get("/como-comprar", frontCTRL.comoComprarGet);
 
 router.get("/contacto", frontCTRL.contactoGet);
 
+router.post("/contacto", frontCTRL.contactoPost);
+
 router.get("/detalle-producto",frontCTRL.detalleGet);
 
 router.get("/sobre-nosotros",frontCTRL.nosotrosGet);
